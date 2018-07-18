@@ -1,0 +1,16 @@
+[Unit]
+Description=Shopping list bot on Discord
+After=syslog.target network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/usr/local/bin/shopping-list-bot/environment
+WorkingDirectory=/usr/local/bin/shopping-list-bot/
+ExecStart=/usr/local/bin/shopping-list-bot/bot.py
+ExecStop=/bin/kill -WINCH ${MAINPID}
+Restart=on-failure
+RestartSec=42s
+PermissionsStartOnly=true
+
+[Install]
+WantedBy=multi-user.target

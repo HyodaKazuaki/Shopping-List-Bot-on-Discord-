@@ -1,0 +1,6 @@
+##### DiscordのBot設定 #####
+
+# トークン
+DISCORD_TOKEN=
+# オーナーID
+DISCORD_OWNER=
